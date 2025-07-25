@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@500&display=swap');
+
+:root {
+  --cor-primaria: #00dfc4;
+  --cor-fundo: #121212;
+  --cor-texto: #f0f0f0;
+  --cor-destaque: #1e1e1e;
+  --cor-hover: #0da1a7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+header img {
+  max-width: 60px;
+  height: auto;
+  filter: drop-shadow(2px 2px 5px var(--cor-primaria));
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: var(--cor-primaria);
+  margin: 0;
+}
+
+header p {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* NAV MENU */
+nav {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--cor-hover);
+}
+
+/* LAYOUT GERAL */
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+aside {
+  flex: 1;
+  max-width: 200px;
+  background-color: var(--cor-destaque);
+  padding: 1rem;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+main {
+  flex: 3;
+}
+
+/* LINKS ASIDE ESTILO NAV */
+.lista-contato {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-contato li {
+  margin-bottom: 1rem;
+}
+
+.lista-contato a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.lista-contato a img {
+  width: 20px;
+  margin-right: 0.5rem;
+}
+
+.lista-contato a:hover {
+  color: var(--cor-hover);
+}
+
+/* SEÇÕES E PARÁGRAFOS */
+section,
+article {
+  margin-bottom: 2rem;
+}
+
+main section,
+main article {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.apresentacao {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* HABILIDADES */
+.badges-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* PROJETOS */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-projeto {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 223, 196, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 223, 196, 0.4);
+}
+
+.card-projeto img {
+  width: 100%;
+  display: block;
+}
+
+.card-projeto h3 {
+  color: var(--cor-primaria);
+  margin: 1rem;
+}
+
+.card-projeto p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+.voltar-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--cor-destaque);
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 223, 196, 0.2);
+  z-index: 1000;
+}
+
+.voltar-topo:hover {
+  color: var(--cor-hover);
+  box-shadow: 0 6px 15px rgba(0, 223, 196, 0.4);
+}
+
+/* Classe que ativa o botão quando rolar a tela */
+.voltar-topo.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
